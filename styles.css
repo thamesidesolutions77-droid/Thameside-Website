@@ -1,0 +1,256 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #f6f7fb;
+}
+
+a { color: inherit; }
+.container {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ===== Header / Nav ===== */
+.site-header {
+  background: #0f1f33;
+  color: #ffffff;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  gap: 18px;
+}
+
+.brand-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.brand-subtitle {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  padding: 6px 2px;
+}
+
+.nav-link:hover { color: #ffffff; text-decoration: underline; }
+
+.nav-link.active {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nav-cta {
+  text-decoration: none;
+  font-weight: 700;
+  color: #0f1f33;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(180deg, #18385b 0%, #295a8f 100%);
+  color: #ffffff;
+  padding: 36px 0 34px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero-kicker {
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.hero-lead {
+  margin: 0 0 16px;
+  opacity: 0.95;
+  max-width: 60ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Logo block in hero (bigger + readable) */
+.hero-logo-wrap {
+  justify-self: end;
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.hero-logo {
+  display: block;
+  width: 220px;     /* change this to 240/260 if you want bigger */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  background: #ffffff;
+  color: #0f1f33;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.btn:hover { filter: brightness(0.96); }
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.75);
+}
+
+/* ===== Panels / Cards ===== */
+.panel {
+  background: #ffffff;
+  margin: 22px 0;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.08);
+}
+
+.panel h2 { margin: 0 0 10px; }
+.panel h3 { margin: 18px 0 12px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.card {
+  background: #f7f9fc;
+  border: 1px solid rgba(15, 31, 51, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.card h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.card p { margin: 0; color: rgba(31,41,55,0.9); }
+
+.contact a { color: #0b4aa2; }
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #0f1f33;
+  color: rgba(255,255,255,0.92);
+  padding: 18px 0;
+  margin-top: 26px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-meta { opacity: 0.9; }
+
+/* ===== Responsive ===== */
+@media (max-width: 780px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-logo-wrap { justify-self: start; }
+  .cards { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+}
+/* ===== Contact form ===== */
+
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #1e40af;
+}
+
+.contact-form button {
+  margin-top: 10px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #1e3a8a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1e40af;
+}
